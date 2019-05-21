@@ -1,14 +1,19 @@
 //takes a line and a new person, returns "Welcome, {name}, you are number {index + 1} in line"
-const takeANumber = (line, person) => {
+let ticketWheel = 1
+
+const takeANumber = (line) => {
   //the person's position in line
-  const position = line.length + 1
-  
+  const position = ticketWheel
+  ticketWheel++
   //adds the person to the line
-  line.push(person)
+  line.push(position)
   
   //returns a greeting
-  return `Welcome, ${person}. You are number ${position} in line.`  
+  return `Welcome, you are number ${position}`  
 }
+
+
+
 
 //takes a line and returns the first person in line.  If line is 0, return "There is nobody waiting to be served!"
 const nowServing = (line) => {
